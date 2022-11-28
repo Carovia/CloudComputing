@@ -17,8 +17,6 @@
 - 522022320047 何文兵 数据爬取
 - 522022320092 刘一铭 Spark
 
-
-
 ## 数据获取说明
 
 编写python脚本（在data目录下），使用四台服务器并行爬取StackOverFlow上的问题列表（按问题提出的时间进行排序）。
@@ -48,13 +46,6 @@ questionID,questionName,timeStamp,votes,answers,views,tags
 - 爬虫暂停时进行数据落盘，清空缓冲区
 - 按年-月记录数据，当这个月的数据爬取完毕时，创建新文件，同时进行数据落盘，清空缓冲区
 
-<<<<<<< HEAD
-## Spark项目
-
-### 项目工作流程
-=======
-
-
 ## Flink项目
 
 - Flink项目使用Scala语言开发，分别对爬取的数据中的tags部分进行了WordCount和加权处理WeightCount
@@ -68,9 +59,7 @@ questionID,questionName,timeStamp,votes,answers,views,tags
 4. 执行上述命令行后，会对已经上传在服务器上的数据进行处理并在/data/outCount/和/data/outWeight/文件夹下输出结果文件供前端使用
 
 
-
-## spark项目
->>>>>>> 818926a0d75c21d2f834bf6085a833ac862d9eb8
+## Spark项目
 
 - spark 在项目中打包生成jar文件
 - 将jar文件上传至服务器
@@ -78,16 +67,13 @@ questionID,questionName,timeStamp,votes,answers,views,tags
 - 监听hdfs文件夹/input_data
 - 每当有文件上传至hdfs中则会对其进行处理生成txt文件保存并供前端使用
 
-<<<<<<< HEAD
 ### 项目实现功能
 
 - 将爬取的数据从监听的hdfs文件夹中获取到
 - 处理数据并计算Tag出现次数
 - 将Tag按次数排序并返回前30
 - 将前30的Tag保存为文件
-=======
 
->>>>>>> 818926a0d75c21d2f834bf6085a833ac862d9eb8
 
 ## 前端
 
