@@ -46,13 +46,22 @@ questionID,questionName,timeStamp,votes,answers,views,tags
 - 爬虫暂停时进行数据落盘，清空缓冲区
 - 按年-月记录数据，当这个月的数据爬取完毕时，创建新文件，同时进行数据落盘，清空缓冲区
 
-## spark项目
+## Spark项目
+
+### 项目工作流程
 
 - spark 在项目中打包生成jar文件
 - 将jar文件上传至服务器
 - 在服务器中以spark submit方式运行jar包
 - 监听hdfs文件夹/input_data
 - 每当有文件上传至hdfs中则会对其进行处理生成txt文件保存并供前端使用
+
+### 项目实现功能
+
+- 将爬取的数据从监听的hdfs文件夹中获取到
+- 处理数据并计算Tag出现次数
+- 将Tag按次数排序并返回前30
+- 将前30的Tag保存为文件
 
 ## 前端
 
